@@ -1,0 +1,104 @@
+/* --------------- 引用块 ---------------  */
+
+/*独立的*/
+.protyle-wysiwyg .bq ,
+div.item__readme blockquote{
+    color: #fcf9f2;
+    background: #292c33;
+    border-radius: 12px;
+    padding: 0.75em 1em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border:4px solid #17b1c2;
+}
+
+/* --------------- 引用块 end ---------------  */
+
+/* --------------- 标签 --------------- */
+
+/*背景*/
+.protyle-wysiwyg [data-node-id] span[data-type='tag']:not(:empty) {
+    position: relative;
+    color: var(--v-tag-color);
+    background-color: #2eb9a8;
+    margin: 0px 0px;
+    padding: 1px 5px;
+    border-radius:5px;
+}
+
+/* --------------- 标签 end --------------- */
+
+
+/* --------------- 代码块 ---------------*/
+
+div.item__readme code
+{
+    /* color: var(--v-block-code-bg-color); */
+    border-radius: 8px;;
+    border: 3px solid black;
+    margin: 0 0 20px;
+}
+
+/* --------------- 代码块 end---------------*/
+
+div[data-type~="NodeBlockquote"] span[data-type~="code"] {
+    color: #fcf9f2;
+    background:#43325b;
+    border-radius: 8px;;
+/*     border: 3px solid black; */
+    margin: 0 0 20px;
+}
+
+div[data-type~="NodeBlockquote"] span[data-type~="strong"] {
+    color: #fcf9f2;
+}
+
+
+/* ——————————————————————————————————————————分割线—————————————————————————————————————————————— */
+.protyle-wysiwyg [data-node-id].hr>div {
+    border-bottom: none;
+    /* border-bottom: 0.1em solid rgba(128, 128, 128, 0.5); */
+}
+
+/* ——————————给分割线添加渐变颜色—————————— */
+
+.hr:after
+{
+    position: absolute;
+    top: 0.2em;
+    left: 0px;
+    content: "";
+    height: 0.1em !important;
+    width: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(125deg, #F44336, #E91E63, #9C27B0, #3F51B5, #2196F3);
+    background-image: linear-gradient(125deg, #eae6f0, #c7d9de, #9C27B0, #cadde2, #b1d5d4);
+    background-size: 400%;
+    animation: bganimation 10s infinite;
+    border-radius: var(--v-block-hr-border-radius) !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*解决 readme 不显示横线的问题*/
+div.item__readme hr{
+    background-image: linear-gradient(125deg, #F44336, #E91E63, #9C27B0, #3F51B5, #2196F3);
+    background-image: linear-gradient(125deg, #eae6f0, #c7d9de, #9C27B0, #cadde2, #b1d5d4);
+    background-size: 400%;
+}
+
+@keyframes bganimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ——————————————————————————————————————————分割线 END—————————————————————————————————————————————— */
+
